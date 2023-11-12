@@ -1,4 +1,4 @@
-export const baseUrl = "https://chatapp.onrender.com/api";
+export const baseUrl = "https://chatapp-api-cyzp.onrender.com/api";
 
 export const postRequest = async (url: string, body: BodyInit) => {
   const response = await fetch(url, {
