@@ -41,7 +41,12 @@ function Chat() {
   //! socket Stuff
 
   useEffect(() => {
-    const newSocket = io("https://socketio-chatapp.onrender.com");
+    const newSocket = io("https://socketio-chatapp.onrender.com", {
+      withCredentials: true,
+      extraHeaders: {
+        "Access-Control-Allow-Origin": "https://chatapp-otari.onrender.com/",
+      },
+    });
     setSocket(newSocket);
 
     return () => {
