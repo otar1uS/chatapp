@@ -39,13 +39,6 @@ const ChatBox: React.FC = () => {
     }
   }, [dispatch, idOfChat]);
 
-  const handleKeyPress = useCallback((e: KeyboardEvent) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      sendMessage();
-    }
-  }, []);
-
   const sendMessage = useCallback(() => {
     if (textMessage.trim() !== "") {
       dispatch(
@@ -58,6 +51,15 @@ const ChatBox: React.FC = () => {
       setMessage("");
     }
   }, [dispatch, idOfChat, textMessage, data]);
+  const handleKeyPress = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        sendMessage();
+      }
+    },
+    [sendMessage]
+  );
 
   const chattingWithName = pChats?.find((user) => user._id === userId);
 

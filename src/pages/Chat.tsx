@@ -41,7 +41,7 @@ function Chat() {
   //! socket Stuff
 
   useEffect(() => {
-    const newSocket = io("http://localhost:3000");
+    const newSocket = io("https://socketio-chatapp.onrender.com");
     setSocket(newSocket);
 
     return () => {
