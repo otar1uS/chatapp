@@ -8,7 +8,7 @@ import { useAppSelector } from "./store/hooks";
 import ErrorPage from "./pages/ErrorPage";
 import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 
-if (process.env.NODE_ENV == "production") disableReactDevTools();
+disableReactDevTools();
 
 function App() {
   const { data: user } = useAppSelector((state) => state.auth);
